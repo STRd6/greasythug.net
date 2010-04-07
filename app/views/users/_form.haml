@@ -2,7 +2,9 @@
   = f.error_messages
   %p
     = f.label :email
-    %br
-    = f.text_field :email
+    = @user.email
+  %p
+    = f.label :display_name
+    = f.text_field :display_name
   %p
     = f.submit "Submit"

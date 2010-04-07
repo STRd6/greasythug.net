@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :scripts
 
+  attr_accessible :display_name, :email
+
   def display_name
     if super.blank?
       "Anonymous#{id}"
