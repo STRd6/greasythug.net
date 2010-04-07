@@ -3,6 +3,8 @@ class ScriptsController  < ResourceController::Base
 
   before_filter :require_creator, :only => [:edit, :update]
 
+  skip_before_filter :verify_authenticity_token, :only => :create
+
   create.before do
     object.creator = current_user
   end
