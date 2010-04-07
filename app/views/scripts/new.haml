@@ -1,0 +1,12 @@
+- form_for script do |form|
+  %p
+    = form.label :domain
+    = form.text_field :domain
+  %p
+    = form.label :title
+    = form.text_field :title
+  %p
+    = form.label :code
+    = form.text_area :code
+  %p
+    = form.submit
