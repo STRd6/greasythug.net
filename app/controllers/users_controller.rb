@@ -1,7 +1,7 @@
 class UsersController < ResourceController::Base
   actions :all, :except => :destroy
 
-  before_filter :require_current_user, :only => :edit
+  before_filter :require_current_user, :only => [:edit, :update]
 
   private
 

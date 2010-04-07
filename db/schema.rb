@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100218060015) do
+ActiveRecord::Schema.define(:version => 20100407022652) do
+
+  create_table "scripts", :force => true do |t|
+    t.integer  "creator_id", :null => false
+    t.string   "domain",     :null => false
+    t.string   "title",      :null => false
+    t.text     "code",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                              :null => false
@@ -27,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20100218060015) do
     t.string   "last_login_ip"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
+    t.string   "display_name"
   end
 
 end
