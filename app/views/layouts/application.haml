@@ -16,11 +16,16 @@
   %body.three-col
     #container
       = render :partial => "/shared/header"
-      #flashes
-        - flash.each do |key, msg|
-          %div{ :class => "flash_#{key}"}= msg
 
-      = yield
+      #content
+        #flashes
+          - flash.each do |key, msg|
+            %div{ :class => "flash_#{key}"}= msg
 
+        %h2= page_heading
+
+        = yield
+
+      = render :partial => "/shared/sidebar"
       = render :partial => "/shared/footer"
     = render :partial => "/shared/analytics"

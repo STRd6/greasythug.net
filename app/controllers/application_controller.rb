@@ -45,4 +45,9 @@ class ApplicationController < ActionController::Base
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
   end
+
+  def page_heading
+    controller_name.titleize
+  end
+  helper_method :page_heading
 end

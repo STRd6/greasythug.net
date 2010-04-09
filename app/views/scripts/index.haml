@@ -1,4 +1,5 @@
 = link_to "New Script", new_script_path
 
-- @scripts.each do |script|
-  = link_to script.title, script
+%ul
+  - @scripts.each do |script|
+    %li= link_to script.title, script
