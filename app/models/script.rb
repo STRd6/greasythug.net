@@ -10,6 +10,6 @@ class Script < ActiveRecord::Base
   private
 
   def set_guid
-    self.guid = SecureRandom.hex(16)
+    self.guid = ActiveSupport::SecureRandom.hex(16)
   end
 end
