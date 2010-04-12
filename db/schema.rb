@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100407022652) do
+ActiveRecord::Schema.define(:version => 20100412172232) do
 
   create_table "scripts", :force => true do |t|
     t.integer  "creator_id", :null => false
@@ -18,7 +18,10 @@ ActiveRecord::Schema.define(:version => 20100407022652) do
     t.text     "code",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "guid",       :null => false
   end
+
+  add_index "scripts", ["guid"], :name => "index_scripts_on_guid", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                              :null => false
