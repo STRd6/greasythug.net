@@ -3,6 +3,15 @@ class UsersController < ResourceController::Base
 
   before_filter :require_current_user, :only => [:edit, :update]
 
+  show.wants.json do
+    render :json => user.to_json(
+      :only => [
+        :id,
+        :display_name
+      ]
+    )
+  end
+
   private
 
   def require_current_user
@@ -22,4 +31,9 @@ class UsersController < ResourceController::Base
       @object = User.find(params[:id])
     end
   end
+
+  def user
+    object
+  end
+  helper_method :user
 end
