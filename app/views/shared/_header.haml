@@ -8,7 +8,7 @@
 
     #user_nav.right
       - if current_user
-        %p= "Welcome, #{current_user.display_name}"
+        %p= "Welcome, #{h current_user.display_name}"
         = link_to "Edit Profile", edit_user_path(:current)
         = link_to "Logout", logout_path
       - else

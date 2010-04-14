@@ -1,7 +1,7 @@
 %p
-  = script.title
-  %i (#{script.domain})
+  = h script.title
+  %i (#{h script.domain})
 %p
-  by #{script.creator.display_name}
+  by #{h script.creator.display_name}
 %pre
-  = script.code
+  = h script.code
