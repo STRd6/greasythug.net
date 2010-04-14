@@ -7,6 +7,10 @@ class Script < ActiveRecord::Base
 
   before_create :set_guid
 
+  def to_param
+    "#{id}-#{title.downcase.gsub(/[^[:alnum:]]/,'-')}".gsub(/-{2,}/,'-').sub(/^-/,'').sub(/-$/,'')
+  end
+
   private
 
   def set_guid
