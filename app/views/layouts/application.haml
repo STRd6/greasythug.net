@@ -21,7 +21,7 @@
       #content
         #flashes
           - flash.each do |key, msg|
-            %div{ :class => "flash_#{key}"}= msg
+            %div{ :class => key }= msg
 
         %h2= page_heading
 

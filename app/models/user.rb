@@ -14,4 +14,9 @@ class User < ActiveRecord::Base
       super
     end
   end
+
+  def deliver_password_reset_instructions!
+    reset_perishable_token!
+    Notifications.deliver_reset_password(self)
+  end
 end
