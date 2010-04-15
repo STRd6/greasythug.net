@@ -5,14 +5,12 @@
     %meta{ 'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8' }
     <meta name="google-site-verification" content="scBPg39XEmoMVN6sazIyo9dr3l9OMcl7lo5woOQp16g" />
     = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'partials/_base.css'
     = stylesheet_link_tag 'print.css', :media => 'print'
     /[if lt IE 8]
       = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
 
     %script{ :type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" }
     = javascript_include_tag 'application'
-    = javascript_include_tag 'main'
 
   %body.three-col
     #container
