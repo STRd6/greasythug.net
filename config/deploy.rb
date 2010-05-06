@@ -16,6 +16,7 @@ role :db,  "67.207.139.110", :primary => true
 task :after_setup do
   run "mkdir #{shared_path}/db"
   run "touch #{shared_path}/log/nginx.log"
+  run "touch #{shared_path}/log/nginx.error.log"
 end
 
 after "deploy", "deploy:cleanup"
