@@ -1,5 +1,3 @@
-require 'mongrel_cluster/recipes'
-
 set :application, "greasythug.net"
 
 set :scm, :git
@@ -21,3 +19,19 @@ task :after_setup do
 end
 
 after "deploy", "deploy:cleanup"
+
+# Passenger start Tasks
+namespace :deploy do
+  task :start, :roles => :app do
+    run "touch #{current_release}/tmp/restart.txt"
+  end
+
+  task :stop, :roles => :app do
+    # Do nothing.
+  end
+
+  desc "Restart Application"
+  task :restart, :roles => :app do
+    run "touch #{current_release}/tmp/restart.txt"
+  end
+end
