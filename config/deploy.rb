@@ -1,3 +1,5 @@
+default_run_options[:pty] = true
+
 set :application, "greasythug.net"
 
 set :scm, :git
